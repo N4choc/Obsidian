@@ -1,0 +1,1 @@
+Dataframe: muestra la data que puede verse de forma tabular (tabla). Es un tipo de dato especial de esta libreria. 
