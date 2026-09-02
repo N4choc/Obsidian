@@ -7,3 +7,6 @@ A nivel de proceso, se distinguen dos tipos de requerimientos: los requerimiento
 Nota: obviamente se debe asegurar que los casos de uso coincidan con las expectaciones del cliente. 
 
 
+## MODELO DE DOMINIO
+Forma parte de la fundacion de la parte estatica del proyecto. Es decir, la parte que describe la estructura del mismo. 
+
