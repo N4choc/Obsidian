@@ -20,4 +20,29 @@ La metrica mas basica para medir el error de un modelo es la estadistica llamada
 NOTA: es muy importante no utilizar la misma data para tanto entrenar como testear el algoritmo, porque si no es obvio que va a arrojar algo similar o igual a la data usada en su entreno. Para testearlo, se deberia usar data que nunca ha visto antes. 
 
 
+### INDEXACION
+Pandas tiene sus propios metodos para indexar, los cuales son *loc* y *iloc*. Estos son mucho mas útiles para cosas mas complejas que simplemente acceder a un indice mediante atributos (dot notation) o keys de un diccionario (por arrays). 
 
+loc y iloc son row first, column second. Cuando en python nativo es primero columnas, luego filas 
+
+`reviews.iloc[:, 0]` traera todas las filas con sus valores de la primera columna. 
+
+Es decir, iloc se maneja a traves de indices. 
+
+En el caso de loc, se maneja a traves de labels
+
+Ej: `reviews.loc[:, ['taster_name', 'taster_twitter_handle', 'points']]`
+
+El metodo `isin()` de pandas permite iterar sobre el dataframe, buscando valores que coincidan con los pasados en un array como argumento. `isin(['Venezuela', 'Bolivia'])`
+
+
+### MAPPING
+Es muy similar al metodo de javascript. Consiste en recorrer un set de datos y obtener otro. 
+
+`review.points.map(lamda p: p - review_points_mean)`
+
+*map* retorna una serie, mientras que *apply* retorna un dataframe. 
+
+En el caso de que se quiera hacer una cuenta o transformacion especifica, es recomendable utilizar el siguiente codigo: 
+
+`reviews.points -= reviews.points.mean()`
